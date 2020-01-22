@@ -22,7 +22,7 @@ nav {
     color: rgba(255, 255, 255, 0.7);
 
     svg {
-      transition: color 0.25s;
+      transition: color 0.25s ease;
       margin: 0 0.5rem;
       &.social {
         font-size: 1.1rem;

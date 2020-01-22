@@ -22,6 +22,7 @@ body {
     color: rgba(255, 255, 255, 0.9);
     text-align: center;
     margin: auto;
+    width: 90%;
 
     .top {
       font-size: 1.1rem;
@@ -38,7 +39,8 @@ body {
         display: inline-block;
         cursor: pointer;
         border-bottom: 1px solid transparent;
-        transition: color 0.25s, border-color 0.25s;
+        transition: color 0.25s ease, border-color 0.25s ease;
+        font-size: 36px;
         &:hover {
           color: #fff;
           border-color: #fff;

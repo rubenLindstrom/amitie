@@ -500,8 +500,8 @@ nav .icons {
 }
 
 nav .icons svg {
-  -webkit-transition: color 0.25s;
-  transition: color 0.25s;
+  -webkit-transition: color 0.25s ease;
+  transition: color 0.25s ease;
   margin: 0 0.5rem;
 }
 
@@ -542,6 +542,7 @@ body {
   color: rgba(255, 255, 255, 0.9);
   text-align: center;
   margin: auto;
+  width: 90%;
 }
 
 .hero .inner-wrapper .top {
@@ -566,8 +567,9 @@ body {
   display: inline-block;
   cursor: pointer;
   border-bottom: 1px solid transparent;
-  -webkit-transition: color 0.25s, border-color 0.25s;
-  transition: color 0.25s, border-color 0.25s;
+  -webkit-transition: color 0.25s ease, border-color 0.25s ease;
+  transition: color 0.25s ease, border-color 0.25s ease;
+  font-size: 36px;
 }
 
 .hero .inner-wrapper .bottom h2:hover {
