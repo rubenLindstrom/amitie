@@ -23,6 +23,8 @@ body {
     text-align: center;
     margin: auto;
     width: 90%;
+    position: relative;
+    z-index: 2;
 
     .top {
       font-size: 1.1rem;
@@ -46,6 +48,33 @@ body {
           border-color: #fff;
         }
       }
+    }
+  }
+  .onHover-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    content: "";
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &.active {
+      opacity: 1;
+    }
+
+    &#bgEat {
+      background-image: url("./images/eat.jpg");
+    }
+    &#bgDrink {
+      background-image: url("./images/drink.jpg");
+    }
+    &#bgVisit {
+      background-image: url("./images/visit.jpg");
     }
   }
 }

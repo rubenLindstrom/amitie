@@ -623,6 +623,8 @@ body {
   text-align: center;
   margin: auto;
   width: 90%;
+  position: relative;
+  z-index: 2;
 }
 
 .hero .inner-wrapper .top {
@@ -655,5 +657,36 @@ body {
 .hero .inner-wrapper .bottom h2:hover {
   color: #fff;
   border-color: #fff;
+}
+
+.hero .onHover-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  -webkit-transition: opacity 0.8s ease;
+  transition: opacity 0.8s ease;
+  content: "";
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero .onHover-bg.active {
+  opacity: 1;
+}
+
+.hero .onHover-bg#bgEat {
+  background-image: url("./images/eat.jpg");
+}
+
+.hero .onHover-bg#bgDrink {
+  background-image: url("./images/drink.jpg");
+}
+
+.hero .onHover-bg#bgVisit {
+  background-image: url("./images/visit.jpg");
 }
 /*# sourceMappingURL=index.css.map */
