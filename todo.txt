@@ -1,3 +1,4 @@
 404
 Animation on hamburger icon click
 Fix doubleclick on hamburger
+Stoppa slider on hover

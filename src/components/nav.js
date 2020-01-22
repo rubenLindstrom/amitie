@@ -1,22 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
+
+import { useFadeIn } from "../hooks";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 
-import Logo from "../images/logo.png";
-
 const Nav = () => {
   const [open, setOpen] = useState(false);
+
   return (
     <>
-      <nav className={open ? "open" : ""}>
+      <nav className={`${open ? "open" : ""} ${useFadeIn()}`}>
         <Link to="/">
           <h1 className="logo">Amitié</h1>
         </Link>
-        <div class="icons">
+        <div className="icons">
           <FontAwesomeIcon icon={faTwitter} className="social" />
           <FontAwesomeIcon icon={faInstagram} className="social" />
           <FontAwesomeIcon

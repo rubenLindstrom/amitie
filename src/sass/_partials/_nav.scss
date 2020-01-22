@@ -28,6 +28,10 @@ nav {
       margin: 0 0.5rem;
       &.social {
         font-size: 1.1rem;
+
+        &:hover {
+          color: #fff;
+        }
       }
 
       &#hamburger {

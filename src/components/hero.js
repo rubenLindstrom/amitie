@@ -1,47 +1,54 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useFadeIn, useSlideshow } from "../hooks";
 
 const Hero = () => {
-  const [activeBg, setActiveBg] = useState(0);
+  const { index, setIndex, resume, pause } = useSlideshow(4, 5000);
+
+  const onLabelHover = index => {
+    setIndex(index);
+    pause();
+  };
+
   return (
     <div className="hero">
-      <div className="inner-wrapper">
+      <div className={`inner-wrapper ${useFadeIn()}`}>
         <div className="top">
           <p>123 Fake Street — Seattle, WA — 206-555-7890</p>
         </div>
         <div className="bottom">
           <h2
             id="headerEat"
-            onMouseEnter={() => setActiveBg(1)}
-            onMouseLeave={() => setActiveBg(0)}
+            onMouseEnter={() => onLabelHover(1)}
+            onMouseLeave={resume}
           >
             Eat
           </h2>
           <h2
             id="headerDrink"
-            onMouseEnter={() => setActiveBg(2)}
-            onMouseLeave={() => setActiveBg(0)}
+            onMouseEnter={() => onLabelHover(2)}
+            onMouseLeave={resume}
           >
             Drink
           </h2>
           <h2
             id="headerVisit"
-            onMouseEnter={() => setActiveBg(3)}
-            onMouseLeave={() => setActiveBg(0)}
+            onMouseEnter={() => onLabelHover(3)}
+            onMouseLeave={resume}
           >
             Visit
           </h2>
         </div>
       </div>
       <div
-        className={`onHover-bg ${activeBg === 1 ? "active" : ""}`}
+        className={`onHover-bg ${index === 1 ? "active" : ""}`}
         id="bgEat"
       ></div>
       <div
-        className={`onHover-bg ${activeBg === 2 ? "active" : ""}`}
+        className={`onHover-bg ${index === 2 ? "active" : ""}`}
         id="bgDrink"
       ></div>
       <div
-        className={`onHover-bg ${activeBg === 3 ? "active" : ""}`}
+        className={`onHover-bg ${index === 3 ? "active" : ""}`}
         id="bgVisit"
       ></div>
     </div>
