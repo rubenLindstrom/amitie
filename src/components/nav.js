@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
@@ -29,16 +29,16 @@ const Nav = () => {
       <div className={`nav-content ${open ? "open" : ""}`}>
         <ul>
           <li>
-            <Link to="">Home</Link>
+            <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <Link to="">Gallery</Link>
+            <NavLink to="/gallery">Gallery</NavLink>
           </li>
           <li>
-            <Link to="">Story</Link>
+            <NavLink to="/story">Story</NavLink>
           </li>
           <li>
-            <Link to="">Visit</Link>
+            <NavLink to="/visit">Visit</NavLink>
           </li>
         </ul>
       </div>

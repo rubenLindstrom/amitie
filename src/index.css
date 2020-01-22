@@ -535,7 +535,6 @@ nav .icons svg:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: -1;
   background-color: #f8f8f8;
   -webkit-transition: opacity 0.4s ease;
   transition: opacity 0.4s ease;
@@ -552,6 +551,7 @@ nav .icons svg:hover {
 
 .nav-content ul {
   text-align: center;
+  position: relative;
 }
 
 .nav-content ul li {
@@ -563,29 +563,36 @@ nav .icons svg:hover {
   opacity: 0;
 }
 
-.nav-content ul li:nth-child(1) {
+.nav-content ul li .active {
+  color: #ff9061;
+}
+
+.nav-content li:nth-child(1) {
   -webkit-transition-delay: 0.3s;
           transition-delay: 0.3s;
 }
 
-.nav-content ul li:nth-child(2) {
+.nav-content li:nth-child(2) {
   -webkit-transition-delay: 0.5s;
           transition-delay: 0.5s;
 }
 
-.nav-content ul li:nth-child(3) {
+.nav-content li:nth-child(3) {
   -webkit-transition-delay: 0.7s;
           transition-delay: 0.7s;
 }
 
-.nav-content ul li:nth-child(4) {
+.nav-content li:nth-child(4) {
   -webkit-transition-delay: 0.9s;
           transition-delay: 0.9s;
 }
 
 .nav-content.open {
   opacity: 1;
-  z-index: 0;
+}
+
+.nav-content.open ul {
+  z-index: 1;
 }
 
 .nav-content.open ul li {
