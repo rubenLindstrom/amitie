@@ -2,7 +2,7 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 4;
   box-sizing: border-box;
   padding: 0.5rem;
   display: flex;
@@ -51,17 +51,18 @@ nav {
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
+  height: 0;
   background-color: #f8f8f8;
   transition: opacity 0.4s ease;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 3;
+  overflow: hidden;
 
   ul {
     text-align: center;
     position: relative;
-
     li {
       display: block;
       margin: 2rem 0;
@@ -86,10 +87,10 @@ nav {
     transition-delay: 0.9s;
   }
   &.open {
+    height: 100vh;
     opacity: 1;
 
     ul {
-      z-index: 1;
       li {
         opacity: 1;
       }

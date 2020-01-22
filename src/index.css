@@ -477,7 +477,7 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 4;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 0.5rem;
@@ -538,7 +538,7 @@ nav .icons svg:hover {
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
+  height: 0;
   background-color: #f8f8f8;
   -webkit-transition: opacity 0.4s ease;
   transition: opacity 0.4s ease;
@@ -551,6 +551,8 @@ nav .icons svg:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  z-index: 3;
+  overflow: hidden;
 }
 
 .nav-content ul {
@@ -592,11 +594,8 @@ nav .icons svg:hover {
 }
 
 .nav-content.open {
+  height: 100vh;
   opacity: 1;
-}
-
-.nav-content.open ul {
-  z-index: 1;
 }
 
 .nav-content.open ul li {
@@ -608,19 +607,24 @@ body {
 }
 
 .fadeIn {
-  -webkit-transition: opacity 1s ease;
-  transition: opacity 1s ease;
+  -webkit-transition: opacity 1s ease, -webkit-transform 1.5s ease;
+  transition: opacity 1s ease, -webkit-transform 1.5s ease;
+  transition: opacity 1s ease, transform 1.5s ease;
+  transition: opacity 1s ease, transform 1.5s ease, -webkit-transform 1.5s ease;
 }
 
 .fadeIn.hidden {
   opacity: 0;
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
 }
 
-.hero {
+.fullscreen {
   height: 100vh;
   width: 100%;
-  background: url("./images/main.jpg") no-repeat center;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -629,7 +633,7 @@ body {
           align-items: center;
 }
 
-.hero::before {
+.shaded::before {
   position: absolute;
   top: 0;
   left: 0;
@@ -638,6 +642,21 @@ body {
   background-color: rgba(0, 0, 0, 0.3);
   content: "";
   z-index: 1;
+}
+
+.shaded-light::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  content: "";
+  z-index: 1;
+}
+
+.hero {
+  background-image: url("./images/main.jpg");
 }
 
 .hero .inner-wrapper {
@@ -711,5 +730,14 @@ body {
 
 .hero .onHover-bg#bgVisit {
   background-image: url("./images/visit.jpg");
+}
+
+#story .story-landing {
+  background-image: url("./images/story.jpg");
+}
+
+#story .page-title {
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
 }
 /*# sourceMappingURL=index.css.map */

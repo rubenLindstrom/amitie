@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useFadeIn, useSlideshow } from "../hooks";
+import React from "react";
+import { useAnimateIn, useSlideshow } from "../hooks";
 
 const Hero = () => {
   const { index, setIndex, resume, pause } = useSlideshow(4, 5000);
@@ -10,8 +10,8 @@ const Hero = () => {
   };
 
   return (
-    <div className="hero">
-      <div className={`inner-wrapper ${useFadeIn()}`}>
+    <div className="hero fullscreen shaded">
+      <div className={`inner-wrapper ${useAnimateIn(["slideUp", "fadeIn"])}`}>
         <div className="top">
           <p>123 Fake Street — Seattle, WA — 206-555-7890</p>
         </div>

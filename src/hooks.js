@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 
-export const useFadeIn = () => {
+export const useAnimateIn = animations => {
   const [isHidden, setIsHidden] = useState(true);
   setTimeout(() => setIsHidden(false), 1000);
 
-  return isHidden ? "hidden fadeIn" : "fadeIn";
+  return `${isHidden ? "hidden" : ""} ${animations.join(" ")}`;
 };
 
 export const useSlideshow = (numSlides, delay) => {

@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 
-import { useFadeIn } from "../hooks";
+import { useAnimateIn } from "../hooks";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
@@ -13,7 +13,7 @@ const Nav = () => {
 
   return (
     <>
-      <nav className={`${open ? "open" : ""} ${useFadeIn()}`}>
+      <nav className={`${open ? "open" : ""} ${useAnimateIn(["fadeIn"])}`}>
         <Link to="/">
           <h1 className="logo">Amitié</h1>
         </Link>
@@ -30,16 +30,24 @@ const Nav = () => {
       <div className={`nav-content ${open ? "open" : ""}`}>
         <ul>
           <li>
-            <NavLink to="/">Home</NavLink>
+            <NavLink onClick={() => setOpen(false)} to="/" exact>
+              Home
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/gallery">Gallery</NavLink>
+            <NavLink onClick={() => setOpen(false)} to="/gallery">
+              Gallery
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/story">Story</NavLink>
+            <NavLink onClick={() => setOpen(false)} to="/story">
+              Story
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/visit">Visit</NavLink>
+            <NavLink onClick={() => setOpen(false)} to="/visit">
+              Visit
+            </NavLink>
           </li>
         </ul>
       </div>
