@@ -26,6 +26,7 @@ body {
   background-position: center;
   display: flex;
   align-items: center;
+  z-index: -1;
 }
 
 .shaded::before {
@@ -36,7 +37,7 @@ body {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.3);
   content: "";
-  z-index: 1;
+  z-index: 0;
 }
 .shaded-light::before {
   position: absolute;
@@ -46,7 +47,7 @@ body {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.2);
   content: "";
-  z-index: 1;
+  z-index: 0;
 }
 
 // HERO
@@ -121,8 +122,33 @@ body {
     background-image: url("./images/story.jpg");
   }
 
-  .page-title {
+  .inner-wrapper {
+    width: 100%;
+    top: -20%;
+    height: 10em;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     color: rgba(255, 255, 255, 0.9);
-    text-align: center;
+    .page-title {
+      font-size: 3rem;
+    }
+    p {
+      text-align: center;
+      font-size: 45px;
+    }
+  }
+
+  .content {
+    margin-top: 1rem;
+    padding: 0 25px;
+    p {
+      margin: 1rem 0;
+      font-size: 1.05rem;
+      line-height: 1.8rem;
+      letter-spacing: 0.03rem;
+    }
   }
 }

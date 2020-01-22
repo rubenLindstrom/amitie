@@ -21,7 +21,22 @@ h3 {
 
 h1 {
   font-size: 2.2rem;
+  text-align: center;
 }
 h2 {
-  font-size: 2.5rem;
+  font-size: 1.75rem;
+  text-align: center;
+}
+
+h2.subtitle {
+  text-transform: uppercase;
+  margin: 3rem 0 2rem 0;
+}
+
+h2.subtitle::after {
+  display: block;
+  content: "";
+  margin: 1.5rem auto;
+  border: 0.5px solid #333;
+  width: 40px;
 }
