@@ -13,9 +13,9 @@ const nav = () => (
       <img src={Logo} alt="Amité logo" />
     </div>
     <div class="icons">
-      <FontAwesomeIcon icon={faTwitter} />
-      <FontAwesomeIcon icon={faInstagram} />
-      <FontAwesomeIcon icon={faBars} />
+      <FontAwesomeIcon icon={faTwitter} className="social" />
+      <FontAwesomeIcon icon={faInstagram} className="social" />
+      <FontAwesomeIcon icon={faBars} id="hamburger" />
     </div>
   </nav>
 );

@@ -2,4 +2,35 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
+  box-sizing: border-box;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+
+  .logo-wrapper {
+    height: 3rem;
+
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+
+  .icons {
+    display: flex;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.8);
+
+    svg {
+      margin: 0 0.5rem;
+      &.social {
+        font-size: 1.1rem;
+      }
+
+      &#hamburger {
+        margin-left: 1.5rem;
+        font-size: 1.7rem;
+      }
+    }
+  }
 }
