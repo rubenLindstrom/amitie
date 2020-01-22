@@ -6,13 +6,21 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 h1,
 h2,
 h3 {
   font-family: "Poiret One", cursive;
   font-style: normal;
   font-weight: 400;
-  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 2.2rem;
 }
 h2 {
   font-size: 2.5rem;

@@ -5,8 +5,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Nav from "./components/nav";
 import Hero from "./components/hero";
 
-// TODO: 404
-
 const app = () => (
   <>
     <Router>
