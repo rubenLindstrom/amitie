@@ -40,15 +40,15 @@ const Hero = () => {
         </div>
       </div>
       <div
-        className={`onHover-bg ${index === 1 ? "active" : ""}`}
+        className={`onHover-bg shaded ${index === 1 ? "active" : ""}`}
         id="bgEat"
       ></div>
       <div
-        className={`onHover-bg ${index === 2 ? "active" : ""}`}
+        className={`onHover-bg shaded ${index === 2 ? "active" : ""}`}
         id="bgDrink"
       ></div>
       <div
-        className={`onHover-bg ${index === 3 ? "active" : ""}`}
+        className={`onHover-bg shaded ${index === 3 ? "active" : ""}`}
         id="bgVisit"
       ></div>
     </div>

@@ -473,6 +473,7 @@ h1 {
 h2 {
   font-size: 1.75rem;
   text-align: center;
+  line-height: 2rem;
 }
 
 h2.subtitle {
@@ -678,7 +679,7 @@ body {
 .hero .inner-wrapper {
   color: rgba(255, 255, 255, 0.9);
   text-align: center;
-  margin: auto;
+  margin: 0 auto;
   width: 90%;
   position: relative;
   z-index: 2;
