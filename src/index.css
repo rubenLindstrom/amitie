@@ -2,6 +2,7 @@
    v2.0-modified | 20110126
    License: none (public domain)
 */
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display:500|Poiret+One&display=swap");
 html,
 body,
 div,
@@ -444,18 +445,24 @@ textarea {
   padding: 0.2em 0;
 }
 
+body {
+  font-family: "Playfair Display", serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 h1,
 h2,
 h3 {
-  font-family: ambroise-std, serif;
+  font-family: "Poiret One", cursive;
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
+  text-transform: uppercase;
 }
 
-body {
-  font-family: "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+h2 {
+  font-size: 2.5rem;
 }
 
 nav {
@@ -489,10 +496,12 @@ nav .icons {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 nav .icons svg {
+  -webkit-transition: color 0.25s;
+  transition: color 0.25s;
   margin: 0 0.5rem;
 }
 
@@ -505,6 +514,11 @@ nav .icons svg#hamburger {
   font-size: 1.7rem;
 }
 
+nav .icons svg:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
 body {
   margin: 0;
 }
@@ -512,8 +526,52 @@ body {
 .hero {
   height: 100vh;
   width: 100%;
-  background-image: radial-gradient(circle, transparent, rgba(0, 0, 0, 0.3)), url("./images/main.jpg");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url("./images/main.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("./images/main.jpg");
   background-size: cover;
   background-position: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hero .inner-wrapper {
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  margin: auto;
+}
+
+.hero .inner-wrapper .top {
+  font-size: 1.1rem;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  line-height: 1.3em;
+}
+
+.hero .inner-wrapper .bottom {
+  margin-top: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.hero .inner-wrapper .bottom h2 {
+  display: inline-block;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+  -webkit-transition: color 0.25s, border-color 0.25s;
+  transition: color 0.25s, border-color 0.25s;
+}
+
+.hero .inner-wrapper .bottom h2:hover {
+  color: #fff;
+  border-color: #fff;
 }
 /*# sourceMappingURL=index.css.map */

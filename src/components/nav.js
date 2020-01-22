@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
@@ -10,7 +11,9 @@ import Logo from "../images/logo.png";
 const nav = () => (
   <nav>
     <div class="logo-wrapper">
-      <img src={Logo} alt="Amité logo" />
+      <Link to="/">
+        <img src={Logo} alt="Amité logo" />
+      </Link>
     </div>
     <div class="icons">
       <FontAwesomeIcon icon={faTwitter} className="social" />

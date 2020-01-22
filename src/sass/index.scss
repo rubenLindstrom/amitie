@@ -1,5 +1,6 @@
 // *** IMPORTS ***
 @import "./_partials/reset";
+@import "./_partials/variables";
 @import "./_partials/typography";
 @import "./_partials/nav";
 
@@ -10,8 +11,39 @@ body {
 .hero {
   height: 100vh;
   width: 100%;
-  background-image: radial-gradient(circle, transparent, rgba(0, 0, 0, 0.3)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url("./images/main.jpg");
   background-size: cover;
   background-position: center;
+  display: flex;
+  align-items: center;
+
+  .inner-wrapper {
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    margin: auto;
+
+    .top {
+      font-size: 1.1rem;
+      font-style: italic;
+      font-weight: 400;
+      letter-spacing: 0.03em;
+      line-height: 1.3em;
+    }
+    .bottom {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: space-evenly;
+      h2 {
+        display: inline-block;
+        cursor: pointer;
+        border-bottom: 1px solid transparent;
+        transition: color 0.25s, border-color 0.25s;
+        &:hover {
+          color: #fff;
+          border-color: #fff;
+        }
+      }
+    }
+  }
 }

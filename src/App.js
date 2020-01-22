@@ -1,14 +1,21 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // Components
 import Nav from "./components/nav";
 import Hero from "./components/hero";
 
-const App = () => (
+// TODO: 404
+
+const app = () => (
   <>
-    <Nav />
-    <Hero />
+    <Router>
+      <Nav />
+      <Switch>
+        <Route path="/" component={Hero} exact />
+      </Switch>
+    </Router>
   </>
 );
 
-export default App;
+export default app;
