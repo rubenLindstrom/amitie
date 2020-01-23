@@ -618,6 +618,24 @@ nav .icons svg:hover {
   opacity: 1;
 }
 
+.staffMember .image-wrapper {
+  width: 200px;
+  height: 200px;
+  margin: 2rem auto 1rem auto;
+}
+
+.staffMember .image-wrapper img {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.staffMember p {
+  text-align: center;
+}
+
 body {
   margin: 0;
 }

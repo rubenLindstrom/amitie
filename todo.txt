@@ -3,3 +3,4 @@ Animation on hamburger icon click
 Fix doubleclick on hamburger
 Stoppa slider on hover
 Återställ navlänkar poppar upp
+Se över optimering hook "useSlideShow"
