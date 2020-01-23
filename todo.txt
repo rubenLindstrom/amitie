@@ -4,3 +4,4 @@ Fix doubleclick on hamburger
 Stoppa slider on hover
 Återställ navlänkar poppar upp
 Se över optimering hook "useSlideShow"
+Hide nan on scoll, show inverted nav on scroll up

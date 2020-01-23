@@ -18,6 +18,7 @@ const Hero = () => {
         <div className="bottom">
           <h2
             id="headerEat"
+            className={index === 1 ? "active" : ""}
             onMouseEnter={() => onLabelHover(1)}
             onMouseLeave={resume}
           >
@@ -25,6 +26,7 @@ const Hero = () => {
           </h2>
           <h2
             id="headerDrink"
+            className={index === 2 ? "active" : ""}
             onMouseEnter={() => onLabelHover(2)}
             onMouseLeave={resume}
           >
@@ -32,6 +34,7 @@ const Hero = () => {
           </h2>
           <h2
             id="headerVisit"
+            className={index === 3 ? "active" : ""}
             onMouseEnter={() => onLabelHover(3)}
             onMouseLeave={resume}
           >

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+
 import { useAnimateIn } from "../hooks";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { faInstagram } from "@fortawesome/free-brands-svg-icons";
-import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { SocialLinks } from "./atoms";
 
 const Nav = () => {
   const [open, setOpen] = useState(false);
@@ -18,8 +18,7 @@ const Nav = () => {
           <h1 className="logo">Amitié</h1>
         </Link>
         <div className="icons">
-          <FontAwesomeIcon icon={faTwitter} className="social" />
-          <FontAwesomeIcon icon={faInstagram} className="social" />
+          <SocialLinks />
           <FontAwesomeIcon
             icon={open ? faTimes : faBars}
             id="hamburger"

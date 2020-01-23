@@ -29,7 +29,6 @@ export const useSlideshow = (numSlides, delay) => {
     clearTimeout(timeout);
     timeout = setTimeout(() => {
       setIndex(prevIndex => (prevIndex + 1) % numSlides);
-      console.log(remaining);
     }, remaining);
   };
 

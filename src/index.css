@@ -618,6 +618,10 @@ nav .icons svg:hover {
   opacity: 1;
 }
 
+.staffMember {
+  margin: 3rem auto;
+}
+
 .staffMember .image-wrapper {
   width: 200px;
   height: 200px;
@@ -630,10 +634,64 @@ nav .icons svg:hover {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  border: 1px solid gray;
 }
 
 .staffMember p {
   text-align: center;
+  margin: 0.5rem auto;
+}
+
+.staffMember p.staffName {
+  font-weight: 500;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.staffMember p.staffTitle {
+  font-style: italic;
+}
+
+footer {
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+footer .inner-block {
+  margin: 4rem 0;
+}
+
+footer p {
+  margin: 1rem 0;
+}
+
+footer p.rubric {
+  font-style: italic;
+  font-weight: bold;
+}
+
+footer h2 {
+  margin: 1.5rem auto;
+}
+
+footer .social-links svg {
+  margin: 0 0.5rem;
+  font-size: 1.5rem;
+  color: rgba(0, 0, 0, 0.7);
+  -webkit-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+}
+
+footer .social-links svg:hover {
+  color: #000;
+}
+
+footer a {
+  color: #ff9061;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
 
 body {
@@ -690,6 +748,12 @@ body {
   z-index: 0;
 }
 
+.separator {
+  border: 0.5px solid #ddd;
+  margin: 8rem auto;
+  width: 70%;
+}
+
 .hero {
   background-image: url("./images/main.jpg");
 }
@@ -730,7 +794,7 @@ body {
   font-size: 36px;
 }
 
-.hero .inner-wrapper .bottom h2:hover {
+.hero .inner-wrapper .bottom h2:hover, .hero .inner-wrapper .bottom h2.active {
   color: #fff;
   border-color: #fff;
 }
@@ -811,5 +875,28 @@ body {
   font-size: 1.05rem;
   line-height: 1.8rem;
   letter-spacing: 0.03rem;
+}
+
+#story .button-primary {
+  margin: 0 auto;
+  display: block;
+  border-radius: 3px;
+  border: 2px solid #333;
+  padding: 0.5rem 2.5rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  background-color: transparent;
+  font-family: inherit;
+  -webkit-transition-property: color, background-color;
+  transition-property: color, background-color;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+
+#story .button-primary:hover {
+  color: #fff;
+  background-color: #333;
 }
 /*# sourceMappingURL=index.css.map */
