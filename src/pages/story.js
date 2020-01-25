@@ -12,7 +12,7 @@ const story = () => {
         <div className="fullscreen story-landing shaded-light">
           <PageTitle>Story</PageTitle>
         </div>
-        <div className="content">
+        <div className="content padded">
           <h2 className="subtitle">
             Innovating for a global palate since 1987
           </h2>
@@ -47,8 +47,6 @@ const story = () => {
         <button className="button-primary">Dine with us</button>
       </div>
       <Separator />
-
-      <Footer />
     </>
   );
 };

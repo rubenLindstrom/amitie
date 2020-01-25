@@ -5,3 +5,6 @@ Stoppa slider on hover
 Se över optimering hook "useSlideShow"
 Hide nav on scoll, show inverted nav on scroll up
 Show black filter when at top 0, hide page title when scroll down
+
+Viktigt:
+Favicon

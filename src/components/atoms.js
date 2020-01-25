@@ -22,7 +22,7 @@ export const Separator = styled.div`
 
 const TitleWrapper = styled.div`
   width: 100%;
-  top: 20%;
+  top: 140px;
   height: 10em;
   position: absolute;
   left: 0;

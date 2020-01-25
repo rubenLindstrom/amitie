@@ -30,7 +30,6 @@ const gallery = () => {
           <img src={tomato} alt="tomato" />
         </div>
       </div>
-      <Footer />
     </>
   );
 };

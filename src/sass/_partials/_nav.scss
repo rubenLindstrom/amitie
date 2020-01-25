@@ -9,7 +9,7 @@ nav {
   justify-content: space-between;
 
   color: rgba(255, 255, 255, 0.7);
-  &.open {
+  &.invert {
     color: #000;
   }
 
@@ -47,7 +47,7 @@ nav {
 }
 .nav-content {
   opacity: 0;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;

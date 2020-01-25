@@ -13,7 +13,7 @@ const Hero = () => {
     <div className="hero fullscreen shaded">
       <div className={`inner-wrapper ${useAnimateIn(["slideUp", "fadeIn"])}`}>
         <div className="top">
-          <p>123 Fake Street — Seattle, WA — 206-555-7890</p>
+          <p className="italic">123 Fake Street — Seattle, WA — 206-555-7890</p>
         </div>
         <div className="bottom">
           <h2
