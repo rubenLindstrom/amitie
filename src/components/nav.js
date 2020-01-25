@@ -11,10 +11,19 @@ import { SocialLinks } from "./atoms";
 const Nav = () => {
   const [open, setOpen] = useState(false);
 
+  const closeMenu = () => setOpen(false);
+
+  const links = [
+    { title: "Home", link: "/" },
+    { title: "Gallery", link: "/gallery" },
+    { title: "Story", link: "/story" },
+    { title: "Visit", link: "/visit" }
+  ];
+
   return (
     <>
       <nav className={`${open ? "open" : ""} ${useAnimateIn(["fadeIn"])}`}>
-        <Link to="/">
+        <Link to="/" onClick={closeMenu}>
           <h1 className="logo">Amitié</h1>
         </Link>
         <div className="icons">
@@ -28,26 +37,13 @@ const Nav = () => {
       </nav>
       <div className={`nav-content ${open ? "open" : ""}`}>
         <ul>
-          <li>
-            <NavLink onClick={() => setOpen(false)} to="/" exact>
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink onClick={() => setOpen(false)} to="/gallery">
-              Gallery
-            </NavLink>
-          </li>
-          <li>
-            <NavLink onClick={() => setOpen(false)} to="/story">
-              Story
-            </NavLink>
-          </li>
-          <li>
-            <NavLink onClick={() => setOpen(false)} to="/visit">
-              Visit
-            </NavLink>
-          </li>
+          {links.map(({ title, link }) => (
+            <li key={link}>
+              <NavLink onClick={closeMenu} to={link} exact>
+                {title}
+              </NavLink>
+            </li>
+          ))}
         </ul>
       </div>
     </>
