@@ -1,7 +1,7 @@
 404
-Animation on hamburger icon click
 Fix doubleclick on hamburger
 Stoppa slider on hover
 Återställ navlänkar poppar upp
 Se över optimering hook "useSlideShow"
-Hide nan on scoll, show inverted nav on scroll up
+Hide nav on scoll, show inverted nav on scroll up
+Show black filter when at top 0, hide page title when scroll down

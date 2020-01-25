@@ -1,49 +1,16 @@
 import React from "react";
 
+import { PageTitle, Separator } from "../components/atoms";
 import Footer from "../components/footer";
 
-const staff = [
-  {
-    image: require("../images/chef1.jpg"),
-    name: "Jeff Bonstar",
-    title: "Head Chef"
-  },
-  {
-    image: require("../images/chef2.jpg"),
-    name: "Mia Chun",
-    title: "Assistant Chef"
-  },
-  {
-    image: require("../images/chef3.jpg"),
-    name: "Sara Fidier",
-    title: "Customer Experience"
-  },
-  {
-    image: require("../images/chef4.jpg"),
-    name: "Paul Ramsey",
-    title: "Deserts and menu"
-  },
-  {
-    image: require("../images/chef5.jpg"),
-    name: "Bebb",
-    title: "Very temporary intern"
-  },
-  {
-    image: require("../images/chef6.jpg"),
-    name: "Antonio Madonna",
-    title: "Somilier"
-  }
-];
+import staff from "../model/staff";
 
 const story = () => {
   return (
     <>
       <div id="story">
         <div className="fullscreen story-landing shaded-light">
-          <div className="inner-wrapper">
-            <h1 className="page-title">— Story —</h1>
-            <p>↓</p>
-          </div>
+          <PageTitle>Story</PageTitle>
         </div>
         <div className="content">
           <h2 className="subtitle">
@@ -79,6 +46,8 @@ const story = () => {
         ))}
         <button className="button-primary">Dine with us</button>
       </div>
+      <Separator />
+
       <Footer />
     </>
   );

@@ -1,11 +1,10 @@
 import React from "react";
 
-import { SocialLinks, Separator } from "./atoms";
+import { SocialLinks } from "./atoms";
 
 const footer = () => {
   return (
     <footer>
-      <Separator />
       <div className="inner-block">
         <p className="rubric">Contact</p>
         <p>206-555-7890</p>

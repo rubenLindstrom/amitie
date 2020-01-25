@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Nav from "./components/nav";
 import Hero from "./components/hero";
 import Story from "./pages/story";
+import Gallery from "./pages/gallery";
 
 const app = () => (
   <>
@@ -13,6 +14,7 @@ const app = () => (
       <Switch>
         <Route path="/" component={Hero} exact />
         <Route path="/story" component={Story} exact />
+        <Route path="/gallery" component={Gallery} exact />
       </Switch>
     </Router>
   </>
