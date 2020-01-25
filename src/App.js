@@ -24,7 +24,7 @@ const App = props => {
   const invertedNavPages = ["/menu", "/visit"];
 
   return (
-    <div id="container">
+    <>
       <Nav invert={invertedNavPages.includes(props.location.pathname)} />
       <Switch>
         <Route path="/" component={Hero} exact />
@@ -33,7 +33,7 @@ const App = props => {
         <Route path="/visit" component={() => withFooter(Visit)} exact />
         <Route path="/menu" component={() => withFooter(Menu)} exact />
       </Switch>
-    </div>
+    </>
   );
 };
 

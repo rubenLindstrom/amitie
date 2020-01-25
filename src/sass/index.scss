@@ -17,11 +17,6 @@ img {
 }
 
 // GENERAL
-#container {
-  position: relative;
-  overflow: hidden;
-}
-
 .fadeIn {
   &.hidden {
     opacity: 0;
@@ -52,7 +47,6 @@ img {
   background-position: center;
   display: flex;
   align-items: center;
-  z-index: -1;
 }
 
 .shaded::before {

@@ -4,8 +4,6 @@ import { NavLink, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 
-import { useAnimateIn } from "../hooks";
-
 import { debounce } from "../helpers";
 
 import { SocialLinks } from "./atoms";
@@ -59,33 +57,38 @@ const Nav = ({ invert }) => {
         className={`
         ${open ? "open" : ""} 
         ${invert ? "invert" : ""} 
-        ${hidden ? "scrolled" : ""} 
+        ${hidden && !open ? "scrolled" : ""} 
         ${inPage && !open ? "inPage" : ""} 
         `}
       >
-        <Link to="/" onClick={closeMenu}>
-          <h1 className="logo">Amitié</h1>
-        </Link>
-        <div className="icons">
-          <SocialLinks />
-          <FontAwesomeIcon
-            icon={open ? faTimes : faBars}
-            id="hamburger"
-            onClick={() => setOpen(prevState => !prevState)}
-          />
+        <div className="inner-wrapper">
+          <Link to="/" onClick={closeMenu}>
+            <h1 className="logo">Amitié</h1>
+          </Link>
+          <div className="icons">
+            <SocialLinks />
+            <FontAwesomeIcon
+              icon={open ? faTimes : faBars}
+              id="hamburger"
+              onClick={() => setOpen(prevState => !prevState)}
+            />
+          </div>
+        </div>
+        <div className={`nav-content ${open ? "open" : ""}`}>
+          <ul>
+            {links.map(({ title, link }, index) => (
+              <li
+                key={link}
+                style={{ transitionDelay: `${0.1 + 0.2 * index}s` }}
+              >
+                <NavLink onClick={closeMenu} to={link} exact>
+                  {title}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
         </div>
       </nav>
-      <div className={`nav-content ${open ? "open" : ""}`}>
-        <ul>
-          {links.map(({ title, link }, index) => (
-            <li key={link} style={{ transitionDelay: `${0.1 + 0.2 * index}s` }}>
-              <NavLink onClick={closeMenu} to={link} exact>
-                {title}
-              </NavLink>
-            </li>
-          ))}
-        </ul>
-      </div>
     </>
   );
 };
