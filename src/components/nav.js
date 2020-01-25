@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useLayoutEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -6,37 +6,62 @@ import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 import { useAnimateIn } from "../hooks";
 
+import { debounce } from "../helpers";
+
 import { SocialLinks } from "./atoms";
 
 const Nav = ({ invert }) => {
+  const [hidden, setHidden] = useState(false);
+  const [inPage, setInPage] = useState(false);
   const [open, setOpen] = useState(false);
+
   const closeMenu = () => setOpen(false);
 
   useEffect(() => {
     if (open) {
-      document.body.style.top = `-${window.scrollY}px`;
-      document.body.style.position = "fixed";
+      document.body.style.overflow = "hidden";
     } else {
-      const scrollY = document.body.style.top;
-      document.body.style.position = "";
-      document.body.style.top = "";
-      window.scrollTo(0, parseInt(scrollY || "0") * -1);
+      document.body.style.overflow = "initial";
     }
   }, [open]);
+
+  let lastYPos = document.scrollingElement.scrollTop;
+  useLayoutEffect(
+    () =>
+      window.addEventListener(
+        "scroll",
+        debounce(() => {
+          const yPos = document.scrollingElement.scrollTop;
+          if (yPos > lastYPos) setHidden(true);
+          else {
+            setHidden(false);
+            if (yPos > 0) setInPage(true);
+            else setInPage(false);
+          }
+
+          lastYPos = yPos;
+        }, 250)
+      ),
+    []
+  );
 
   const links = [
     { title: "Home", link: "/" },
     { title: "Gallery", link: "/gallery" },
     { title: "Story", link: "/story" },
-    { title: "Visit", link: "/visit" }
+    { title: "Visit", link: "/visit" },
+    { title: "Menu", link: "/menu" }
   ];
 
   return (
     <>
       <nav
-        className={`${open || invert ? "invert" : ""} ${useAnimateIn([
-          "fadeIn"
-        ])}`}
+        className={`
+        ${open ? "open" : ""} 
+        ${invert ? "invert" : ""} 
+        ${hidden ? "scrolled" : ""} 
+        ${inPage && !open ? "inPage" : ""} 
+        `}
       >
         <Link to="/" onClick={closeMenu}>
           <h1 className="logo">Amitié</h1>
@@ -52,8 +77,8 @@ const Nav = ({ invert }) => {
       </nav>
       <div className={`nav-content ${open ? "open" : ""}`}>
         <ul>
-          {links.map(({ title, link }) => (
-            <li key={link}>
+          {links.map(({ title, link }, index) => (
+            <li key={link} style={{ transitionDelay: `${0.1 + 0.2 * index}s` }}>
               <NavLink onClick={closeMenu} to={link} exact>
                 {title}
               </NavLink>

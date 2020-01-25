@@ -502,6 +502,18 @@ p.italic {
   font-style: italic;
 }
 
+p.bold {
+  font-weight: bold;
+}
+
+p.small {
+  font-size: 0.95rem;
+}
+
+p.smaller {
+  font-size: 0.9rem;
+}
+
 nav {
   position: fixed;
   top: 0;
@@ -509,23 +521,34 @@ nav {
   z-index: 4;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 0.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: 3rem;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  overflow: hidden;
   color: rgba(255, 255, 255, 0.7);
+  -webkit-transition: height 0.5s ease, padding 0.5s ease, opacity 1s ease, -webkit-box-shadow 0.5s ease, -webkit-transform 1s ease;
+  transition: height 0.5s ease, padding 0.5s ease, opacity 1s ease, -webkit-box-shadow 0.5s ease, -webkit-transform 1s ease;
+  transition: height 0.5s ease, box-shadow 0.5s ease, padding 0.5s ease, opacity 1s ease, transform 1s ease;
+  transition: height 0.5s ease, box-shadow 0.5s ease, padding 0.5s ease, opacity 1s ease, transform 1s ease, -webkit-box-shadow 0.5s ease, -webkit-transform 1s ease;
 }
 
-nav.invert {
+nav.inPage {
+  background-color: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+nav.invert, nav.open {
   color: #000;
 }
 
 nav .logo {
   text-decoration: none;
   color: inherit;
+  margin: 0.5rem;
 }
 
 nav .icons {
@@ -536,6 +559,8 @@ nav .icons {
       -ms-flex-align: center;
           align-items: center;
   color: inherit;
+  right: 0;
+  top: 0.5rem;
 }
 
 nav .icons svg {
@@ -559,6 +584,17 @@ nav .icons svg#hamburger {
 
 nav .icons svg:hover {
   cursor: pointer;
+}
+
+nav.scrolled {
+  -webkit-transform: translateY(-48px);
+          transform: translateY(-48px);
+}
+
+@media only screen and (min-width: 991px) {
+  nav.open {
+    padding-right: 29px;
+  }
 }
 
 .nav-content {
@@ -600,26 +636,6 @@ nav .icons svg:hover {
 
 .nav-content ul li .active {
   color: #ff9061;
-}
-
-.nav-content li:nth-child(1) {
-  -webkit-transition-delay: 0.3s;
-          transition-delay: 0.3s;
-}
-
-.nav-content li:nth-child(2) {
-  -webkit-transition-delay: 0.5s;
-          transition-delay: 0.5s;
-}
-
-.nav-content li:nth-child(3) {
-  -webkit-transition-delay: 0.7s;
-          transition-delay: 0.7s;
-}
-
-.nav-content li:nth-child(4) {
-  -webkit-transition-delay: 0.9s;
-          transition-delay: 0.9s;
 }
 
 .nav-content.open {
@@ -708,19 +724,16 @@ footer a:hover {
 }
 
 body {
-  width: 100%;
   margin: 0;
+}
+
+img {
+  width: 100%;
 }
 
 #container {
   position: relative;
-}
-
-.fadeIn {
-  -webkit-transition: opacity 1s ease, -webkit-transform 1.5s ease;
-  transition: opacity 1s ease, -webkit-transform 1.5s ease;
-  transition: opacity 1s ease, transform 1.5s ease;
-  transition: opacity 1s ease, transform 1.5s ease, -webkit-transform 1.5s ease;
+  overflow: hidden;
 }
 
 .fadeIn.hidden {
@@ -732,6 +745,10 @@ body {
 .padded {
   padding-left: 25px;
   padding-right: 25px;
+}
+
+.marginTop {
+  margin-top: 7rem;
 }
 
 .center {
@@ -795,6 +812,12 @@ body {
           transition-timing-function: ease;
 }
 
+.button-primary a {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+}
+
 .button-primary:hover {
   color: #fff;
   background-color: #333;
@@ -803,6 +826,39 @@ body {
 .button-primary.spaced {
   margin-top: 3rem;
   margin-bottom: 3rem;
+}
+
+.button-primary.inverted {
+  color: #fff;
+  background-color: #333;
+}
+
+.button-primary.inverted.hover {
+  color: #333;
+  background-color: #fff;
+}
+
+.image-wrapper.thin {
+  height: 150px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.image-wrapper.thin img {
+  position: absolute;
+}
+
+.parallax {
+  height: 150px;
+  background-position: 50%, 50%;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .hero {
@@ -816,6 +872,10 @@ body {
   width: 90%;
   position: relative;
   z-index: 2;
+  -webkit-transition: opacity 1s ease, -webkit-transform 1.5s ease;
+  transition: opacity 1s ease, -webkit-transform 1.5s ease;
+  transition: opacity 1s ease, transform 1.5s ease;
+  transition: opacity 1s ease, transform 1.5s ease, -webkit-transform 1.5s ease;
 }
 
 .hero .inner-wrapper .top {
@@ -893,11 +953,21 @@ body {
   font-size: 1.05rem;
 }
 
-.gallery .image-grid img {
-  width: 100%;
+.menu .course-header {
+  margin-top: 3rem;
 }
 
-.visit {
-  margin-top: 7rem;
+.menu .menu-rubric {
+  margin-top: 4rem;
+}
+
+.menu .menu-item {
+  line-height: 2rem;
+  font-size: 0.95rem;
+  margin: 2rem auto;
+}
+
+.menu .menu-item .menu-price {
+  font-style: italic;
 }
 /*# sourceMappingURL=index.css.map */

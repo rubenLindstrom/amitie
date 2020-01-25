@@ -6,19 +6,23 @@
 @import "./_partials/staff";
 @import "./_partials/footer";
 
+// GLOBALS
 body {
-  width: 100%;
+  // width: 100%;
   margin: 0;
+}
+
+img {
+  width: 100%;
 }
 
 // GENERAL
 #container {
   position: relative;
+  overflow: hidden;
 }
 
 .fadeIn {
-  transition: opacity 1s ease, transform 1.5s ease;
-
   &.hidden {
     opacity: 0;
     transform: translateY(20px);
@@ -28,6 +32,10 @@ body {
 .padded {
   padding-left: 25px;
   padding-right: 25px;
+}
+
+.marginTop {
+  margin-top: 7rem;
 }
 
 .center {
@@ -82,6 +90,12 @@ body {
   transition-duration: 0.2s;
   transition-timing-function: ease;
 
+  a {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+  }
+
   &:hover {
     color: #fff;
     background-color: #333;
@@ -91,6 +105,36 @@ body {
     margin-top: 3rem;
     margin-bottom: 3rem;
   }
+
+  &.inverted {
+    color: #fff;
+    background-color: #333;
+
+    &.hover {
+      color: #333;
+      background-color: #fff;
+    }
+  }
+}
+
+.image-wrapper.thin {
+  height: 150px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  img {
+    position: absolute;
+    // top: -50%;
+  }
+}
+
+.parallax {
+  height: 150px;
+  background-position: 50%, 50%;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 // HERO
@@ -104,6 +148,7 @@ body {
     width: 90%;
     position: relative;
     z-index: 2;
+    transition: opacity 1s ease, transform 1.5s ease;
 
     .top {
       font-size: 1.1rem;
@@ -173,16 +218,22 @@ body {
   }
 }
 
-// Gallery
-.gallery {
-  .image-grid {
-    img {
-      width: 100%;
+// Menu
+.menu {
+  .course-header {
+    margin-top: 3rem;
+  }
+  .menu-rubric {
+    margin-top: 4rem;
+  }
+
+  .menu-item {
+    line-height: 2rem;
+    font-size: 0.95rem;
+    margin: 2rem auto;
+
+    .menu-price {
+      font-style: italic;
     }
   }
-}
-
-// Visit
-.visit {
-  margin-top: 7rem;
 }

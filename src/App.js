@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import React, { useState, useEffect, useLayoutEffect } from "react";
+import { Switch, Route, withRouter } from "react-router-dom";
 
 // Components
 import Nav from "./components/nav";
@@ -7,31 +7,34 @@ import Hero from "./components/hero";
 import Story from "./pages/story";
 import Gallery from "./pages/gallery";
 import Visit from "./pages/visit";
+import Menu from "./pages/menu";
 
 import { withFooter } from "./hoc";
 
-const App = () => {
+const App = props => {
   useEffect(() => {
-    const location = window.location.pathname;
+    const location = props.location.pathname;
+    window.scrollY = 0;
     const pageTitle =
       location === "/" ? "Home" : location[1].toUpperCase() + location.slice(2);
 
     document.title = `${pageTitle} • Amitié`;
-  }, [window.location]);
+  }, [props.location]);
+
+  const invertedNavPages = ["/menu", "/visit"];
 
   return (
     <div id="container">
-      <Router>
-        <Nav invert={window.location.pathname.slice(1) === "visit"} />
-        <Switch>
-          <Route path="/" component={Hero} exact />
-          <Route path="/story" component={() => withFooter(Story)} exact />
-          <Route path="/gallery" component={() => withFooter(Gallery)} exact />
-          <Route path="/visit" component={() => withFooter(Visit)} exact />
-        </Switch>
-      </Router>
+      <Nav invert={invertedNavPages.includes(props.location.pathname)} />
+      <Switch>
+        <Route path="/" component={Hero} exact />
+        <Route path="/story" component={() => withFooter(Story)} exact />
+        <Route path="/gallery" component={() => withFooter(Gallery)} exact />
+        <Route path="/visit" component={() => withFooter(Visit)} exact />
+        <Route path="/menu" component={() => withFooter(Menu)} exact />
+      </Switch>
     </div>
   );
 };
 
-export default App;
+export default withRouter(App);

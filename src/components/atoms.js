@@ -31,6 +31,7 @@ const TitleWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  transition: opacity 1s ease, transform 1.5s ease;
   color: rgba(255, 255, 255, 0.9);
 
   h1 {
