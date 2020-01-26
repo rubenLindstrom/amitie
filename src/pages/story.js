@@ -35,16 +35,18 @@ const story = () => {
           </p>
           <h2 className="subtitle">The staff</h2>
         </div>
-        {staff.map(({ image, name, title }) => (
-          <div className="staffMember" key={name}>
-            <div className="image-wrapper">
-              <img src={image} alt={`${name} portrait`} />
+        <div className="staff">
+          {staff.map(({ image, name, title }) => (
+            <div className="staffMember" key={name}>
+              <div className="image-wrapper">
+                <img src={image} alt={`${name} portrait`} />
+              </div>
+              <p className="staffName">{name}</p>
+              <p className="staffTitle">{title}</p>
             </div>
-            <p className="staffName">{name}</p>
-            <p className="staffTitle">{title}</p>
-          </div>
-        ))}
-        <button className="button-primary">Dine with us</button>
+          ))}
+        </div>
+        <button className="button-primary spaced">Dine with us</button>
       </div>
       <Separator />
     </>

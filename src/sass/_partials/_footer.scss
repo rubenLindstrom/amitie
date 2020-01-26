@@ -39,3 +39,52 @@ footer {
     }
   }
 }
+
+@media only screen and (min-width: $tablet) {
+  footer {
+    padding-bottom: 4rem;
+    .inner-block,
+    p {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .inner-wrapper {
+      display: flex;
+      justify-content: space-around;
+      max-width: 80%;
+      margin: 5rem auto 4rem auto;
+      font-size: 1.1rem;
+
+      .inner-block p {
+        margin: 1rem auto;
+        &.rubric {
+          margin-bottom: 0.5rem;
+          font-size: 1.2rem;
+        }
+        &:nth-child(2) {
+          margin-top: 0rem;
+        }
+      }
+
+      h2 {
+        font-size: 4rem;
+        margin-bottom: 3rem;
+      }
+
+      .social-links svg {
+        font-size: 2rem;
+      }
+
+      div:nth-child(odd) {
+        flex: 1;
+      }
+      div:nth-child(even) {
+        flex: 3;
+      }
+    }
+  }
+  .credit {
+    margin: 3rem 0;
+    font-size: 1.1rem;
+  }
+}

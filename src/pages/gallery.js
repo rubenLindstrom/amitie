@@ -1,7 +1,6 @@
 import React from "react";
 
 import { PageTitle } from "../components/atoms";
-import Footer from "../components/footer";
 
 import peas from "../images/gallery/peas.jpg";
 import atTable from "../images/gallery/at table.jpg";
@@ -19,15 +18,54 @@ const gallery = () => {
       <div className="gallery">
         <PageTitle>Gallery</PageTitle>
         <div className="image-grid">
-          <img src={peas} alt="peas" />
-          <img src={atTable} alt="atTable" />
-          <img src={bread} alt="bread" />
-          <img src={cassoulette} alt="cassoulette" />
-          <img src={rocksDrink} alt="rocksDrink" />
-          <img src={snails} alt="snails" />
-          <img src={wine} alt="wine" />
-          <img src={tasty} alt="tasty" />
-          <img src={tomato} alt="tomato" />
+          <div className="gallery-item">
+            <img src={peas} alt="peas" />
+            <div className="description">
+              <p>Freshly harvested vegetables</p>
+            </div>
+          </div>
+          <div className="gallery-item">
+            <img src={atTable} alt="atTable" />
+            <div className="description">
+              <p>Seatings for up to 20 people</p>
+            </div>
+          </div>
+          <div className="gallery-item">
+            <img src={bread} alt="bread" />
+            <div className="description">
+              <p>Oven hot bread from the local boulangerie</p>
+            </div>
+          </div>
+          <div className="gallery-item">
+            <img src={rocksDrink} alt="rocksDrink" />
+            <div className="description">
+              <p>Exotic drinks like never before</p>
+            </div>
+          </div>
+          <div className="gallery-item">
+            <img src={tasty} alt="tasty" />
+            <div className="description">
+              <p>Local and foreign dishes</p>
+            </div>
+          </div>
+          <div className="gallery-item">
+            <img src={cassoulette} alt="cassoulette" />
+            <div className="description">
+              <p>Seasonal menu</p>
+            </div>
+          </div>
+          <div className="gallery-item">
+            <img src={tomato} alt="tomato" />
+            <div className="description">
+              <p>Brunch on Saturdays</p>
+            </div>
+          </div>
+          <div className="gallery-item">
+            <img src={wine} alt="wine" />
+            <div className="description">
+              <p>Carefully curated wine cellar</p>
+            </div>
+          </div>
         </div>
       </div>
     </>
