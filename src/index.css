@@ -524,10 +524,10 @@ nav {
   height: 3rem;
   overflow: hidden;
   color: rgba(255, 255, 255, 0.7);
-  -webkit-transition: height 0.5s ease, padding 0.5s ease, opacity 1s ease, -webkit-box-shadow 0.5s ease, -webkit-transform 1s ease;
-  transition: height 0.5s ease, padding 0.5s ease, opacity 1s ease, -webkit-box-shadow 0.5s ease, -webkit-transform 1s ease;
-  transition: height 0.5s ease, box-shadow 0.5s ease, padding 0.5s ease, opacity 1s ease, transform 1s ease;
-  transition: height 0.5s ease, box-shadow 0.5s ease, padding 0.5s ease, opacity 1s ease, transform 1s ease, -webkit-box-shadow 0.5s ease, -webkit-transform 1s ease;
+  -webkit-transition: height 0.5s ease, padding 0.5s ease, opacity 1s ease, background-color 0.5s ease, -webkit-box-shadow 0.5s ease, -webkit-transform 1s ease;
+  transition: height 0.5s ease, padding 0.5s ease, opacity 1s ease, background-color 0.5s ease, -webkit-box-shadow 0.5s ease, -webkit-transform 1s ease;
+  transition: height 0.5s ease, box-shadow 0.5s ease, padding 0.5s ease, opacity 1s ease, transform 1s ease, background-color 0.5s ease;
+  transition: height 0.5s ease, box-shadow 0.5s ease, padding 0.5s ease, opacity 1s ease, transform 1s ease, background-color 0.5s ease, -webkit-box-shadow 0.5s ease, -webkit-transform 1s ease;
 }
 
 nav .inner-wrapper {
@@ -673,9 +673,13 @@ nav.scrolled {
   nav .nav-content ul li {
     display: inline-block;
     margin: 0 1rem;
+    -webkit-transition: none;
+    transition: none;
   }
   nav .nav-content ul li a {
     outline: none;
+    -webkit-transition-delay: 0;
+            transition-delay: 0;
     -webkit-transition: color 0.2s ease;
     transition: color 0.2s ease;
   }
@@ -687,6 +691,9 @@ nav.scrolled {
   }
   nav .nav-content ul li a:hover.active {
     color: #ff9061;
+  }
+  nav.inPage a {
+    font-weight: bold;
   }
 }
 

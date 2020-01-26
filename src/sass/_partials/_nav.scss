@@ -8,7 +8,7 @@ nav {
   overflow: hidden;
   color: rgba(255, 255, 255, 0.7);
   transition: height 0.5s ease, box-shadow 0.5s ease, padding 0.5s ease,
-    opacity 1s ease, transform 1s ease;
+    opacity 1s ease, transform 1s ease, background-color 0.5s ease;
 
   .inner-wrapper {
     display: flex;
@@ -131,8 +131,10 @@ nav {
         li {
           display: inline-block;
           margin: 0 1rem;
+          transition: none;
           a {
             outline: none;
+            transition-delay: 0;
             transition: color 0.2s ease;
             &.active {
               color: $active-transparent;
@@ -145,6 +147,11 @@ nav {
             }
           }
         }
+      }
+    }
+    &.inPage {
+      a {
+        font-weight: bold;
       }
     }
   }
