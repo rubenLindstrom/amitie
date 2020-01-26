@@ -25,14 +25,13 @@ const TitleWrapper = styled.div`
   top: 140px;
   height: 10em;
   position: absolute;
-  left: 0;
-  right: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   transition: opacity 1s ease, transform 1.5s ease;
   color: rgba(255, 255, 255, 0.9);
+  z-index: 1;
 
   h1 {
     font-size: 3rem;

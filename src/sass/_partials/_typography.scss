@@ -42,6 +42,16 @@ h2.subtitle::after {
   width: 40px;
 }
 
+@media only screen and (min-width: $tablet) {
+  h2.subtitle::after {
+    margin-top: 3rem;
+  }
+
+  h2.big-header {
+    font-size: 3rem;
+  }
+}
+
 p {
   line-height: 1.8rem;
   margin: 1rem 0;
