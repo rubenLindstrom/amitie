@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useLayoutEffect } from "react";
+import React, { useEffect } from "react";
 import { Switch, Route, withRouter } from "react-router-dom";
 
 // Components

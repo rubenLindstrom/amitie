@@ -7,7 +7,6 @@ import atTable from "../images/gallery/at table.jpg";
 import bread from "../images/gallery/bread.jpg";
 import cassoulette from "../images/gallery/cassoulette.jpg";
 import rocksDrink from "../images/gallery/rocks drink.jpg";
-import snails from "../images/gallery/snails.jpg";
 import tasty from "../images/gallery/tasty.jpg";
 import tomato from "../images/gallery/tomato.jpg";
 import wine from "../images/gallery/wine.jpg";

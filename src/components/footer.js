@@ -26,7 +26,11 @@ const footer = () => {
       </div>
       <p className="credit">
         This website was crafted with love by{" "}
-        <a href="https://littlweb.netlify.com" target="_blank">
+        <a
+          href="https://littlweb.netlify.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           littleweb
         </a>
       </p>

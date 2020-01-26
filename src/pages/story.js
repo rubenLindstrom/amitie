@@ -1,7 +1,6 @@
 import React from "react";
 
 import { PageTitle, Separator } from "../components/atoms";
-import Footer from "../components/footer";
 
 import staff from "../model/staff";
 

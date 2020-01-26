@@ -19,6 +19,7 @@ const visit = () => {
         </p>
         <button className="button-primary spaced">
           <a
+            rel="noopener noreferrer"
             target="_blank"
             href="http://www.opentable.com/rest_profile.aspx?rid=1000&restref=1000"
           >

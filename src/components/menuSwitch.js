@@ -15,7 +15,7 @@ const Outer = styled.div`
 `;
 
 const Box = styled.div`
-  height: 250px;
+  height: 200px;
   width: 500px;
   background-image: url(${props => (props.food ? pasta : drink)});
   background-position: center;
@@ -58,9 +58,7 @@ const Box = styled.div`
   }
 `;
 
-const MenuSwitch = props => {
-  const [mode, setMode] = useState(props.mode);
-
+const MenuSwitch = ({ mode, setMode }) => {
   return (
     <Outer>
       <Box onClick={() => setMode("FOOD")} food active={mode === "FOOD"}>
