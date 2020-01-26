@@ -51,3 +51,27 @@ export const PageTitle = ({ children }) => (
     <p>↓</p>
   </TitleWrapper>
 );
+
+const ParallaxBase = styled.div`
+  height: 150px;
+  position: relative;
+  &::before {
+    background-image: url(${props => props.bg});
+    background-position: 50%, 50%;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    will-change: transform;
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+  }
+`;
+
+export const Parallax = ({ bg, height }) => (
+  <ParallaxBase bg={bg} height={height} />
+);

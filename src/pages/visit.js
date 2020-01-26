@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { Separator } from "../components/atoms";
+import { Separator, Parallax } from "../components/atoms";
 
 import wine from "../images/gallery/wine.jpg";
 
@@ -27,10 +27,7 @@ const visit = () => {
           </a>
         </button>
       </div>
-      <div
-        className="parallax"
-        style={{ backgroundImage: `url(${wine})` }}
-      ></div>
+      <Parallax bg={wine} />
       <div class="content">
         <p className="small">
           Upon your reservation you have the option of adding wine testing. For

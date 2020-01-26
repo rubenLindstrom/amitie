@@ -927,11 +927,11 @@ footer .social-links svg:hover {
   color: #000;
 }
 
-footer a {
+footer .credit a {
   color: #ff9061;
 }
 
-footer a:hover {
+footer .credit a:hover {
   text-decoration: underline;
 }
 
@@ -1142,13 +1142,6 @@ img {
 
 .image-wrapper.thin img {
   position: absolute;
-}
-
-.parallax {
-  height: 150px;
-  background-position: 50%, 50%;
-  background-size: cover;
-  background-attachment: fixed;
 }
 
 .hero {

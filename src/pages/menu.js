@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import food from "../model/food";
 import drinks from "../model/drinks";
 
-import { Separator } from "../components/atoms";
+import { Separator, Parallax } from "../components/atoms";
 import MenuSwitch from "../components/menuSwitch";
 
 const Menu = () => {
@@ -13,7 +13,7 @@ const Menu = () => {
     <div className="menu-category" key={group}>
       <h2 className="course-header big-header">— {group} —</h2>
       <p className="smaller">{subtitle}</p>
-      <div className="parallax" style={{ backgroundImage: `url(${bg})` }} />
+      <Parallax bg={bg} />
       <div className="menu-group">
         {console.log(contents)}
         {Object.keys(contents).map(category => (
@@ -35,16 +35,18 @@ const Menu = () => {
   );
 
   return (
-    <div className="menu padded center marginTop">
+    <div className="menu marginTop">
       <MenuSwitch mode={mode} setMode={setMode} />
-      <div style={{ display: mode === "FOOD" ? "block" : "none" }}>
-        {Object.keys(food).map(key => renderMenu(key, food[key]))}
+      <div className="padded center">
+        <div style={{ display: mode === "FOOD" ? "block" : "none" }}>
+          {Object.keys(food).map(key => renderMenu(key, food[key]))}
+        </div>
+        <div style={{ display: mode === "DRINKS" ? "block" : "none" }}>
+          {Object.keys(drinks).map(key => renderMenu(key, drinks[key]))}
+        </div>
+        <button className="button-primary spaced">Make a reservation</button>
+        <Separator />
       </div>
-      <div style={{ display: mode === "DRINKS" ? "block" : "none" }}>
-        {Object.keys(drinks).map(key => renderMenu(key, drinks[key]))}
-      </div>
-      <button className="button-primary spaced">Make a reservation</button>
-      <Separator />
     </div>
   );
 };

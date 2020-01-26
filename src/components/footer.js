@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import { SocialLinks } from "./atoms";
 
@@ -14,7 +15,9 @@ const footer = () => {
           <p>example@example.com</p>
         </div>
         <div className="middle">
-          <h2>— Amitié —</h2>
+          <Link to="/">
+            <h2>— Amitié —</h2>
+          </Link>
           <SocialLinks />
         </div>
         <div className="inner-block">
