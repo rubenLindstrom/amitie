@@ -1,0 +1,159 @@
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 4;
+  box-sizing: border-box;
+  height: 3rem;
+  overflow: hidden;
+  color: rgba(255, 255, 255, 0.7);
+  transition: height 0.5s ease, box-shadow 0.5s ease, padding 0.5s ease,
+    opacity 1s ease, transform 1s ease;
+
+  .inner-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 5;
+  }
+
+  &.inPage {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  &.invert,
+  &.open,
+  &.inPage {
+    color: #000;
+  }
+
+  .logo {
+    outline: none;
+    text-decoration: none;
+    color: inherit;
+    margin: 0.5rem;
+  }
+
+  .icons {
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: inherit;
+    right: 0;
+
+    svg {
+      transition: color 0.25s ease;
+      margin: 0 0.5rem;
+      &.social {
+        font-size: 1.1rem;
+
+        &:hover {
+          color: #fff;
+        }
+      }
+
+      &#hamburger {
+        margin-left: 1.5rem;
+        font-size: 1.7rem;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  &.scrolled {
+    transform: translateY(-48px);
+  }
+}
+
+@media only screen and (max-width: $tablet) {
+  .nav-content {
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    background-color: #f8f8f8;
+    transition: opacity 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    overflow: hidden;
+
+    ul {
+      text-align: center;
+      position: relative;
+      li {
+        display: block;
+        margin: 2rem 0;
+        font-size: 1.8rem;
+        transition: opacity 0.7s ease;
+        opacity: 0;
+        .active {
+          color: $active;
+        }
+      }
+    }
+    &.open {
+      height: 100vh;
+      opacity: 1;
+
+      ul {
+        li {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $tablet) {
+  nav {
+    display: flex;
+    justify-content: space-between;
+    .inner-wrapper {
+      .icons #hamburger {
+        display: none;
+      }
+    }
+
+    .nav-content {
+      display: flex;
+      width: max-content;
+      align-items: center;
+
+      ul {
+        li {
+          display: inline-block;
+          margin: 0 1rem;
+          a {
+            outline: none;
+            transition: color 0.2s ease;
+            &.active {
+              color: $active-transparent;
+            }
+            &:hover {
+              color: #fff;
+              &.active {
+                color: $active;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $desktop) {
+  nav {
+    &.open {
+      padding-right: 29px;
+    }
+  }
+}

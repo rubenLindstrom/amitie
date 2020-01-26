@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display:500|Poiret+One&display=swap");
+body {
+  font-family: "Playfair Display", serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Poiret One", cursive;
+  font-style: normal;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 2.2rem;
+  text-align: center;
+}
+h2 {
+  font-size: 1.75rem;
+  text-align: center;
+  line-height: 2rem;
+}
+
+h2.subtitle {
+  text-transform: uppercase;
+  margin: 3rem 0 2rem 0;
+}
+
+h2.subtitle::after {
+  display: block;
+  content: "";
+  margin: 1.5rem auto;
+  border: 0.5px solid #333;
+  width: 40px;
+}
+
+p {
+  line-height: 1.8rem;
+  margin: 1rem 0;
+
+  &.spaced {
+    letter-spacing: 0.03rem;
+  }
+
+  &.italic {
+    font-style: italic;
+  }
+
+  &.bold {
+    font-weight: bold;
+  }
+
+  &.small {
+    font-size: 0.95rem;
+  }
+  &.smaller {
+    font-size: 0.9rem;
+  }
+}
