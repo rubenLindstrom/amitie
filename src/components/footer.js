@@ -10,9 +10,9 @@ const footer = () => {
         <div className="inner-block">
           <p className="rubric">Contact</p>
           <p>206-555-7890</p>
-          <p>123 Fake Street</p>
+          <p>123 Main St Anytown</p>
           <p>Seattle, WA 00000</p>
-          <p>example@example.com</p>
+          <p>hello@amitie.com</p>
         </div>
         <div className="middle">
           <Link to="/">

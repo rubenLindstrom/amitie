@@ -31,6 +31,7 @@ const Box = styled.div`
       position: absolute;
       top: 140%;
       content: "";
+      will-change: left, right;
       height: 3px;
       left: ${props =>
         props.food || (!props.food && props.active) ? 0 : "100%"};

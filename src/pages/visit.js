@@ -21,7 +21,7 @@ const visit = () => {
           <a
             rel="noopener noreferrer"
             target="_blank"
-            href="http://www.opentable.com/rest_profile.aspx?rid=1000&restref=1000"
+            href="http://www.opentable.com"
           >
             Find a table
           </a>

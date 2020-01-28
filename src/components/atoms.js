@@ -7,10 +7,33 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 
+const SocialLink = styled.a`
+  transition: color 0.25s ease;
+  margin: 0 0.5rem;
+
+  &:hover {
+    color: #fff;
+  }
+`;
+
 export const SocialLinks = () => (
-  <div className="social-links">
-    <FontAwesomeIcon icon={faTwitter} className="social" />
-    <FontAwesomeIcon icon={faInstagram} className="social" />
+  <div>
+    <SocialLink
+      href="https://twitter.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="social-link"
+    >
+      <FontAwesomeIcon icon={faTwitter} className="social" />
+    </SocialLink>
+    <SocialLink
+      href="https://instagram.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="social-link"
+    >
+      <FontAwesomeIcon icon={faInstagram} className="social" />
+    </SocialLink>
   </div>
 );
 

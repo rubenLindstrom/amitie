@@ -19,15 +19,15 @@ footer {
     margin: 1.5rem auto;
   }
 
-  .social-links {
+  .social-link {
+    font-size: 1.5rem;
     svg {
-      margin: 0 0.5rem;
       font-size: 1.5rem;
       color: rgba(0, 0, 0, 0.7);
       transition: color 0.2s ease;
 
       &:hover {
-        color: #000;
+        color: $active;
       }
     }
   }

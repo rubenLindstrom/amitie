@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import { PageTitle, Separator } from "../components/atoms";
 
@@ -45,7 +46,9 @@ const story = () => {
             </div>
           ))}
         </div>
-        <button className="button-primary spaced">Dine with us</button>
+        <Link to="/visit">
+          <button className="button-primary spaced">Dine with us</button>
+        </Link>
       </div>
       <Separator />
     </>

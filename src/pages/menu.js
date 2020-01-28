@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import food from "../model/food";
 import drinks from "../model/drinks";
@@ -7,8 +7,14 @@ import { Separator, Parallax } from "../components/atoms";
 import MenuSwitch from "../components/menuSwitch";
 
 const Menu = () => {
-  // TODO: Get active state from URL
-  const [mode, setMode] = useState("FOOD");
+  const [mode, setMode] = useState(null);
+
+  useEffect(() => {
+    if (window.location.hash && window.location.hash.substr(1) === "drink")
+      setMode("DRINKS");
+    else setMode("FOOD");
+  }, []);
+
   const renderMenu = (group, { subtitle, bg, contents }) => (
     <div className="menu-category" key={group}>
       <h2 className="course-header big-header">— {group} —</h2>
@@ -44,7 +50,9 @@ const Menu = () => {
         <div style={{ display: mode === "DRINKS" ? "block" : "none" }}>
           {Object.keys(drinks).map(key => renderMenu(key, drinks[key]))}
         </div>
+        <a href="https://www.opentable.com/" target="_blank" rel="noopener noreferrer">
         <button className="button-primary spaced">Make a reservation</button>
+        </a>
         <Separator />
       </div>
     </div>

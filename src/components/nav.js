@@ -52,12 +52,9 @@ const Nav = ({ invert }) => {
   return (
     <>
       <nav
-        className={`
-        ${open ? "open" : ""} 
-        ${invert ? "invert" : ""} 
-        ${hidden && !open ? "scrolled" : ""} 
-        ${inPage && !open ? "inPage" : ""} 
-        `}
+        className={`${open ? "open " : ""}${invert ? "invert " : ""}${
+          hidden && !open ? "scrolled " : ""
+        }${inPage && !open ? "inPage" : ""}`}
       >
         <div className="inner-wrapper">
           <Link to="/" onClick={closeMenu}>

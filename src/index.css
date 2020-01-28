@@ -558,10 +558,6 @@ nav.inPage {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-nav.invert, nav.open, nav.inPage {
-  color: #000;
-}
-
 nav .logo {
   outline: none;
   text-decoration: none;
@@ -578,30 +574,24 @@ nav .icons {
           align-items: center;
   position: relative;
   color: inherit;
-  right: 0;
+  margin-right: 1rem;
 }
 
-nav .icons svg {
-  -webkit-transition: color 0.25s ease;
-  transition: color 0.25s ease;
-  margin: 0 0.5rem;
+nav .icons .social-link {
+  font-size: 1.2rem;
 }
 
-nav .icons svg.social {
-  font-size: 1.1rem;
-}
-
-nav .icons svg.social:hover {
-  color: #fff;
-}
-
-nav .icons svg#hamburger {
+nav .icons #hamburger {
   margin-left: 1.5rem;
   font-size: 1.7rem;
 }
 
-nav .icons svg:hover {
-  cursor: pointer;
+nav.invert, nav.open, nav.inPage {
+  color: #000;
+}
+
+nav.invert .icons .social-link:hover, nav.invert .icons .social-link.active, nav.open .icons .social-link:hover, nav.open .icons .social-link.active, nav.inPage .icons .social-link:hover, nav.inPage .icons .social-link.active {
+  color: #ff9061;
 }
 
 nav.scrolled {
@@ -664,6 +654,11 @@ nav.scrolled {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+  }
+  nav .inner-wrapper .icons {
+    position: relative;
+    top: 4px;
+    margin-left: 0.5rem;
   }
   nav .inner-wrapper .icons #hamburger {
     display: none;
@@ -766,6 +761,21 @@ nav.scrolled {
   }
 }
 
+.gallery .image-grid .gallery-item {
+  position: relative;
+}
+
+.gallery .image-grid .gallery-item .description {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.5rem 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 2rem;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
 @media only screen and (min-width: 768px) {
   .gallery .image-grid {
     display: -ms-grid;
@@ -779,11 +789,9 @@ nav.scrolled {
     -o-object-fit: cover;
        object-fit: cover;
   }
-  .gallery .image-grid .gallery-item {
-    position: relative;
-  }
   .gallery .image-grid .gallery-item::before,
   .gallery .image-grid .gallery-item .description {
+    background-color: none;
     opacity: 0;
     -webkit-transition: opacity 0.5s ease;
     transition: opacity 0.5s ease;
@@ -796,15 +804,6 @@ nav.scrolled {
     left: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.3);
-  }
-  .gallery .image-grid .gallery-item .description {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 0.5rem 1rem;
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 2rem;
   }
   .gallery .image-grid .gallery-item:hover::before,
   .gallery .image-grid .gallery-item:hover .description {
@@ -915,16 +914,19 @@ footer h2 {
   margin: 1.5rem auto;
 }
 
-footer .social-links svg {
-  margin: 0 0.5rem;
+footer .social-link {
+  font-size: 1.5rem;
+}
+
+footer .social-link svg {
   font-size: 1.5rem;
   color: rgba(0, 0, 0, 0.7);
   -webkit-transition: color 0.2s ease;
   transition: color 0.2s ease;
 }
 
-footer .social-links svg:hover {
-  color: #000;
+footer .social-link svg:hover {
+  color: #ff9061;
 }
 
 footer .credit a {
