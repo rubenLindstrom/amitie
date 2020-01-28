@@ -17,22 +17,20 @@ const story = () => {
             Innovating for a global palate since 1987
           </h2>
           <p className="">
-            Welcome to the Tremont Template. To get started, watch these short
-            videos on Squarespace basics and read the template guide. This Text
-            Block is perfect for generating visitor interest by going into more
-            detail about yourself, your project, or company. You can talk about
-            how your idea started, how long you’ve been working on it and why
-            it’s important. The more specific you are, the more visitors can
-            engage with what you do.
+            Welcome to Amitié. We're a multicultural hotspot for food cultures
+            from all around the world. We cater to those who are willing to pay
+            that little extra for an extraordinary night. 
           </p>
           <p>
-            You can also use this space to answer any questions your visitors
-            may have about you or your work. To get them interested in clicking
-            the Button Block below, you can talk about your creative process,
-            what sets your idea apart, and how happy you are to share it. Learn
-            more about blocks here. Also, be sure to edit the button’s URL so it
-            links to a page on your site.
+            It all started with Remi Fidier, our founder. He had always had a
+            passion for food, but felt that no restaurant in his home town
+            were able to cater to his requirements. Without any money to start
+            a restaurant he had to find funding amongst his near and dear.
+            Through the support of his family, he had a humble beginning as a
+            nische one man show kind of restaurant. The word soon spread, and
+            that was the start of the now world renowned Amitié.
           </p>
+          <p>Come dine with us, and be a part of food history!</p>
           <h2 className="subtitle">The staff</h2>
         </div>
         <div className="staff">
