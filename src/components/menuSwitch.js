@@ -7,20 +7,15 @@ import drink from "../images/gallery/drink2.jpg";
 const Outer = styled.div`
   display: flex;
   background-color: #fff;
-  justify-content: center;
-  border-radius: 10px;
   overflow: hidden;
-  width: min-content;
-  margin: auto;
+  width: 100%;
 `;
 
 const Box = styled.div`
-  height: 250px;
-  width: 500px;
-  background-image: url(${props => (props.food ? pasta : drink)});
-  background-position: center;
+  flex-grow: 1;
+  height: 125px;
+  background: url(${props => (props.food ? pasta : drink)}) no-repeat center;
   background-size: cover;
-  background-repeat: no-repeat;
   position: relative;
   display: flex;
   align-items: center;
@@ -36,12 +31,14 @@ const Box = styled.div`
       position: absolute;
       top: 140%;
       content: "";
+      will-change: left, right;
       height: 3px;
       left: ${props =>
         props.food || (!props.food && props.active) ? 0 : "100%"};
       right: ${props => (props.food && !props.active ? "100%" : 0)};
       background-color: #fff;
       transition: left 0.4s ease, right 0.4s ease;
+      transition-delay: 0.1s;
     }
   }
 
@@ -58,9 +55,8 @@ const Box = styled.div`
   }
 `;
 
-const MenuSwitch = props => {
-  const [mode, setMode] = useState(props.mode);
-
+// TODO: Responsiveness
+const MenuSwitch = ({ mode, setMode }) => {
   return (
     <Outer>
       <Box onClick={() => setMode("FOOD")} food active={mode === "FOOD"}>

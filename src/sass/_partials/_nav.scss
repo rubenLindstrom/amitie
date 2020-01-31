@@ -8,7 +8,7 @@ nav {
   overflow: hidden;
   color: rgba(255, 255, 255, 0.7);
   transition: height 0.5s ease, box-shadow 0.5s ease, padding 0.5s ease,
-    opacity 1s ease, transform 1s ease;
+    opacity 1s ease, transform 1s ease, background-color 0.5s ease;
 
   .inner-wrapper {
     display: flex;
@@ -23,12 +23,6 @@ nav {
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   }
 
-  &.invert,
-  &.open,
-  &.inPage {
-    color: #000;
-  }
-
   .logo {
     outline: none;
     text-decoration: none;
@@ -41,29 +35,27 @@ nav {
     align-items: center;
     position: relative;
     color: inherit;
-    right: 0;
+    margin-right: 1rem;
 
-    svg {
-      transition: color 0.25s ease;
-      margin: 0 0.5rem;
-      &.social {
-        font-size: 1.1rem;
+    .social-link {
+      font-size: 1.2rem;
+    }
 
-        &:hover {
-          color: #fff;
-        }
-      }
-
-      &#hamburger {
-        margin-left: 1.5rem;
-        font-size: 1.7rem;
-      }
-
-      &:hover {
-        cursor: pointer;
-      }
+    #hamburger {
+      margin-left: 1.5rem;
+      font-size: 1.7rem;
     }
   }
+
+  &.invert,
+  &.open,
+  &.inPage {
+    color: #000;
+    .icons .social-link:hover, .icons .social-link.active,  {
+      color: $active;
+    }
+  }
+
   &.scrolled {
     transform: translateY(-48px);
   }
@@ -117,8 +109,14 @@ nav {
     display: flex;
     justify-content: space-between;
     .inner-wrapper {
-      .icons #hamburger {
-        display: none;
+      .icons {
+        position: relative;
+        top: 4px;
+        margin-left: 0.5rem;
+
+        #hamburger {
+          display: none;
+        }
       }
     }
 
@@ -131,8 +129,10 @@ nav {
         li {
           display: inline-block;
           margin: 0 1rem;
+          transition: none;
           a {
             outline: none;
+            transition-delay: 0;
             transition: color 0.2s ease;
             &.active {
               color: $active-transparent;
@@ -145,6 +145,11 @@ nav {
             }
           }
         }
+      }
+    }
+    &.inPage {
+      a {
+        font-weight: bold;
       }
     }
   }

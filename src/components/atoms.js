@@ -7,10 +7,33 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 
+const SocialLink = styled.a`
+  transition: color 0.25s ease;
+  margin: 0 0.5rem;
+
+  &:hover {
+    color: #fff;
+  }
+`;
+
 export const SocialLinks = () => (
-  <div className="social-links">
-    <FontAwesomeIcon icon={faTwitter} className="social" />
-    <FontAwesomeIcon icon={faInstagram} className="social" />
+  <div>
+    <SocialLink
+      href="https://twitter.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="social-link"
+    >
+      <FontAwesomeIcon icon={faTwitter} className="social" />
+    </SocialLink>
+    <SocialLink
+      href="https://instagram.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="social-link"
+    >
+      <FontAwesomeIcon icon={faInstagram} className="social" />
+    </SocialLink>
   </div>
 );
 
@@ -50,4 +73,28 @@ export const PageTitle = ({ children }) => (
     <h1>— {children} —</h1>
     <p>↓</p>
   </TitleWrapper>
+);
+
+const ParallaxBase = styled.div`
+  height: 150px;
+  position: relative;
+  &::before {
+    background-image: url(${props => props.bg});
+    background-position: 50%, 50%;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    will-change: transform;
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+  }
+`;
+
+export const Parallax = ({ bg, height }) => (
+  <ParallaxBase bg={bg} height={height} />
 );

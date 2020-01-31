@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import { SocialLinks } from "./atoms";
 
@@ -9,12 +10,14 @@ const footer = () => {
         <div className="inner-block">
           <p className="rubric">Contact</p>
           <p>206-555-7890</p>
-          <p>123 Fake Street</p>
+          <p>123 Main St Anytown</p>
           <p>Seattle, WA 00000</p>
-          <p>example@example.com</p>
+          <p>hello@amitie.com</p>
         </div>
         <div className="middle">
-          <h2>— Amitié —</h2>
+          <Link to="/">
+            <h2>— Amitié —</h2>
+          </Link>
           <SocialLinks />
         </div>
         <div className="inner-block">
@@ -26,7 +29,11 @@ const footer = () => {
       </div>
       <p className="credit">
         This website was crafted with love by{" "}
-        <a href="https://littlweb.netlify.com" target="_blank">
+        <a
+          href="https://littlweb.netlify.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           littleweb
         </a>
       </p>

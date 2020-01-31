@@ -23,25 +23,23 @@ const Nav = ({ invert }) => {
     }
   }, [open]);
 
-  let lastYPos = document.scrollingElement.scrollTop;
-  useLayoutEffect(
-    () =>
-      window.addEventListener(
-        "scroll",
-        debounce(() => {
-          const yPos = document.scrollingElement.scrollTop;
-          if (yPos > lastYPos) setHidden(true);
-          else {
-            setHidden(false);
-            if (yPos > 0) setInPage(true);
-            else setInPage(false);
-          }
+  useLayoutEffect(() => {
+    let lastYPos = document.scrollingElement.scrollTop;
+    window.addEventListener(
+      "scroll",
+      debounce(() => {
+        const yPos = document.scrollingElement.scrollTop;
+        if (yPos > lastYPos) setHidden(true);
+        else {
+          setHidden(false);
+          if (yPos > 0) setInPage(true);
+          else setInPage(false);
+        }
 
-          lastYPos = yPos;
-        }, 250)
-      ),
-    []
-  );
+        lastYPos = yPos;
+      }, 250)
+    );
+  }, []);
 
   const links = [
     { title: "Home", link: "/" },
@@ -54,12 +52,9 @@ const Nav = ({ invert }) => {
   return (
     <>
       <nav
-        className={`
-        ${open ? "open" : ""} 
-        ${invert ? "invert" : ""} 
-        ${hidden && !open ? "scrolled" : ""} 
-        ${inPage && !open ? "inPage" : ""} 
-        `}
+        className={`${open ? "open " : ""}${invert ? "invert " : ""}${
+          hidden && !open ? "scrolled " : ""
+        }${inPage && !open ? "inPage" : ""}`}
       >
         <div className="inner-wrapper">
           <Link to="/" onClick={closeMenu}>

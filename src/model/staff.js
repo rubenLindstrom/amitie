@@ -21,8 +21,8 @@ export default [
   },
   {
     image: require("../images/staff/chef5.jpg"),
-    name: "Bebb",
-    title: "Very temporary intern"
+    name: "John Hero",
+    title: "Butcher"
   },
   {
     image: require("../images/staff/chef6.jpg"),

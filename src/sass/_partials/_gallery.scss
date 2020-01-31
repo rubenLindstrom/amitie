@@ -1,3 +1,18 @@
+.gallery .image-grid .gallery-item {
+  position: relative;
+
+  .description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0.5rem 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 2rem;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+}
+
 @media only screen and (min-width: $tablet) {
   .gallery .image-grid {
     display: grid;
@@ -10,10 +25,9 @@
     }
 
     .gallery-item {
-      position: relative;
-
       &::before,
       .description {
+        background-color: none;
         opacity: 0;
         transition: opacity 0.5s ease;
       }
@@ -26,16 +40,6 @@
         left: 0;
         bottom: 0;
         background: rgba(0, 0, 0, 0.3);
-      }
-
-      .description {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        padding: 0.5rem 1rem;
-        color: rgba(255, 255, 255, 0.8);
-        font-size: 2rem;
       }
 
       &:hover {

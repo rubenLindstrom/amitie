@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useLayoutEffect } from "react";
+import React, { useEffect } from "react";
 import { Switch, Route, withRouter } from "react-router-dom";
 
 // Components
@@ -14,11 +14,11 @@ import { withFooter } from "./hoc";
 const App = props => {
   useEffect(() => {
     const location = props.location.pathname;
-    window.scrollY = 0;
     const pageTitle =
       location === "/" ? "Home" : location[1].toUpperCase() + location.slice(2);
 
     document.title = `${pageTitle} • Amitié`;
+    window.scrollTo(0, 0);
   }, [props.location]);
 
   const invertedNavPages = ["/menu", "/visit"];

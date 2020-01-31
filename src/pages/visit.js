@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { Separator } from "../components/atoms";
+import { Separator, Parallax } from "../components/atoms";
 
 import wine from "../images/gallery/wine.jpg";
 
@@ -19,17 +19,15 @@ const visit = () => {
         </p>
         <button className="button-primary spaced">
           <a
+            rel="noopener noreferrer"
             target="_blank"
-            href="http://www.opentable.com/rest_profile.aspx?rid=1000&restref=1000"
+            href="http://www.opentable.com"
           >
             Find a table
           </a>
         </button>
       </div>
-      <div
-        className="parallax"
-        style={{ backgroundImage: `url(${wine})` }}
-      ></div>
+      <Parallax bg={wine} />
       <div class="content">
         <p className="small">
           Upon your reservation you have the option of adding wine testing. For

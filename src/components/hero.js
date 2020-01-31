@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useAnimateIn, useSlideshow } from "../hooks";
 
 const Hero = () => {
@@ -13,7 +14,9 @@ const Hero = () => {
     <div className="hero fullscreen shaded">
       <div className={`inner-wrapper ${useAnimateIn(["slideUp", "fadeIn"])}`}>
         <div className="top">
-          <p className="italic">123 Fake Street — Seattle, WA — 206-555-7890</p>
+          <p className="italic">
+            123 Main St Anytown — Seattle, WA — 206-555-7890
+          </p>
         </div>
         <div className="bottom">
           <h2
@@ -22,7 +25,7 @@ const Hero = () => {
             onMouseEnter={() => onLabelHover(1)}
             onMouseLeave={resume}
           >
-            Eat
+            <Link to="/menu">Eat</Link>
           </h2>
           <h2
             id="headerDrink"
@@ -30,7 +33,7 @@ const Hero = () => {
             onMouseEnter={() => onLabelHover(2)}
             onMouseLeave={resume}
           >
-            Drink
+            <Link to="/menu#drink">Drink</Link>
           </h2>
           <h2
             id="headerVisit"
@@ -38,7 +41,7 @@ const Hero = () => {
             onMouseEnter={() => onLabelHover(3)}
             onMouseLeave={resume}
           >
-            Visit
+            <Link to="/visit">Visit</Link>
           </h2>
         </div>
       </div>
